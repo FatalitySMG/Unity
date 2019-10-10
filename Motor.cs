@@ -55,6 +55,15 @@ namespace Clase
                     mRig.AddForce(force);
                     t = 0;
                 }
+            public void Damage()
+                 {
+                     vida -= damage;
+                 }
+
+                 void OnCollisionStay(Collision collision)
+                 {
+                     if (collision.gameObject.tag == "Floor" && Input.GetButtonDown("Jump")) Salto();
+                 }
             }           
         }
     }
